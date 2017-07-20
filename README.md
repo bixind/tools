@@ -1,3 +1,3 @@
 ## Tools
 ### Ссылки
-- [index](https://bixind.github.io/tools/index.html)
+- [index](https://bixind.github.io/tools/polls/index.html)
