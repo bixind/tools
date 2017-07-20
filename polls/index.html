@@ -17,6 +17,9 @@
         VK.Auth.login(function(response) {
             console.log(response.session);
         });
+        VK.Api.call('users.get', function(r) {
+          console.log(r);
+        });
     </script>
 </body>
 </html>
