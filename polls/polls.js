@@ -13,9 +13,6 @@ $(function() {
                 hide_error();
                 $('#polls-body').removeClass("hidden");
                 session = response.session;
-                VK.Api.call('users.get', {user_ids: response.session.user.id}, function(r) {
-                    console.log(r);
-                });
             } else {
                 show_error('Не удалось подключить профиль');
             }
