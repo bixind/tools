@@ -2,8 +2,6 @@ $(function() {
     var session;
     $('#login').click(function(){
         VK.Auth.login(function(response) {
-            console.log('keks');
-            console.log(response.session);
             if (response.session) {
                 $('#login-failed').addClass("hidden");
                 $('#polls-body').removeClass("hidden");
@@ -15,7 +13,7 @@ $(function() {
                 $('#login-failed').removeClass("hidden");
             }
         });
-    });
+    }, 8192);
     var val = 0;
     $("#testb").click(function() {
         var place = $('#polls-list');
