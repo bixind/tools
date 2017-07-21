@@ -24,15 +24,51 @@
 </head>
 <body>
     <div class="container">
-        <div id="intro">
-            <h1>Опросы</h1>
-            <p>Узнайте результаты опросов.</p>
+        <div class="row">
+            <div class="col-md-12">
+                <div id="intro">
+                    <h1>Опросы</h1>
+                    <p>Узнайте результаты опросов.</p>
+                </div>
+                <button id="login" type="button" class="btn btn-primary">Login</button>
+            </div>
         </div>
-        <button id="login" type="button" class="btn btn-primary">Login</button>
-        <div id='login-failed' class="alert alert-danger hidden" role="alert">Не удалось подключить профиль.</div>
-        <div id="polls-body" class="hidden">
-            <button id="testb" type="button" class="btn btn-default">Test</button>
-            <div id="polls-list">
+        <hr>
+        <div id='errors' class="alert alert-danger hidden" role="alert"></div>
+        <div class="row">
+            <div class="col-md-12">
+                <div id="polls-body" class="">
+                        <div class="form-group">
+                            <label for="tg-url">Ссылка на пост</label>
+                            <input type="text" class="form-control" id="tg-url">
+                        </div>
+                        <button id="url-button" type="button" class="btn btn-default">Обработать</button>
+                    <hr>
+                    <div id="polls-list">
+                        <div class="panel panel-default">
+                            <div class="panel-heading">Nazvanie</div>
+                            <table class="table">
+                                <thead>
+                                <tr>
+                                    <th>Вариант</th>
+                                    <th>Голосов</th>
+                                    <th>Процент</th>
+                                </tr>
+                                </thead>
+                                <tbody>
+                                <tr>
+                                    <th>lol</th>
+                                    <th>kek</th>
+                                    <th>chto</th>
+                                </tr>
+                                </tbody>
+                            </table>
+                            <div class="panel-body">
+                            Голосов: 123
+                            </div>
+                        </div>
+                    </div>
+                </div>
             </div>
         </div>
     </div>
