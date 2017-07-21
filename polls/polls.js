@@ -23,7 +23,7 @@ $(function() {
     });
 
     function addPoll(place, owner_id, poll_id) {
-        VK.Api.call('polls.getById', {owner_id: owner_id, poll_id: poll_id: }, function(r) {
+        VK.Api.call('polls.getById', {owner_id: owner_id, poll_id: poll_id}, function(r) {
             var poll = r.response;
             var part = '<div class="panel panel-default">\
                             <div class="panel-heading">' + poll.question + '</div>\
