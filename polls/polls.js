@@ -1,23 +1,7 @@
 $(function() {
     var session;
-    function show_error(name) {
-        $('#errors').text(name);
-        $('#errors').removeClass("hidden");
-    };
-    function hide_error() {
-            $('#errors').addClass("hidden");
-    }
-    $('#login').click(function(){
-        VK.Auth.login(function(response) {
-            if (response.session) {
-                hide_error();
-                $('#polls-body').removeClass("hidden");
-                session = response.session;
-            } else {
-                show_error('Не удалось подключить профиль');
-            }
-        }, 8192);
-    });
+
+    $('#login').click(loginFunc(8192));
 
     function addPoll(place, owner_id, poll_id) {
         VK.Api.call('polls.getById', {owner_id: owner_id, poll_id: poll_id}, function(r) {
