@@ -14,11 +14,13 @@ $(function () {
     function implicitMethod(method, data, func) {
         data.access_token = token;
         data.v = '5.69';
-        var url = 'https://api.vk.com/method/'+ method + '?' + $.param(data);
-        $.get(url,
-            {},
-            func
-        );
+        var url = 'https://api.vk.com/method/'+ method;
+        $.ajax({
+            crossDomain: true,
+            url: url,
+            data: data,
+            success: func
+        });
     }
 
     var token;
