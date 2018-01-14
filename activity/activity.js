@@ -2,12 +2,13 @@ $(function () {
     var scope = 2 | 4096;
     $('#login').click(function () {
         var params = {client_id: VK._apiId,
-            redirect_uri: "https://bixind.github.io/tools/activity/index.html",
+            redirect_uri: "https://oauth.vk.com/blank.html",
             scope: scope,
             response_type: 'token',
-            v: 5.69
+            v: 5.69,
+            display: 'popup',
         };
-        window.open("https://oauth.vk.com/authorize?" + $.param(params),"_self");
+        window.open("https://oauth.vk.com/authorize?" + $.param(params));
     });
 
     var token;
