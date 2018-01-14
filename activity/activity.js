@@ -6,7 +6,7 @@ $(function () {
             scope: scope,
             response_type: 'token',
             v: 5.69,
-            display: 'popup',
+            display: 'popup'
         };
         window.open("https://oauth.vk.com/authorize?" + $.param(params));
     });
