@@ -15,12 +15,10 @@ $(function () {
         data.access_token = token;
         data.v = '5.69';
         var url = 'https://api.vk.com/method/'+ method + '?' + $.param(data);
-        $.get(url, {
-            success: func,
-            error: function (r) {
-                console.log(r);
-            }
-        });
+        $.get(url,
+            {},
+            func
+        );
     }
 
     var token;
