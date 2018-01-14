@@ -11,6 +11,18 @@ $(function () {
         window.open("https://oauth.vk.com/authorize?" + $.param(params));
     });
 
+    function implicitMethod(method, data, func) {
+        data.access_token = token;
+        data.v = '5.69';
+        var url = 'https://api.vk.com/method/'+ method + '?' + $.param(data);
+        $.get(url, {
+            success: func,
+            error: function (r) {
+                console.log(r);
+            }
+        });
+    }
+
     var token;
     var re = /access_token=(\w+)/;
     $("#url-button").click(function() {
@@ -23,7 +35,7 @@ $(function () {
         hide_error();
         token = res[1];
         $('#inner-body').removeClass("hidden");
-        VK.Api.call('messages.getLongPollServer', {need_pts: 0, lp_version: 2}, function (r) {
+        implicitMethod('messages.getLongPollServer', {need_pts: 0, lp_version: 2}, function (r) {
             console.log(r);
         });
     });
