@@ -2,6 +2,8 @@ VK.init({
     apiId: 6121199
 });
 
+var session;
+
 function show_error(name) {
         $('#errors').text(name);
         $('#errors').removeClass("hidden");
@@ -14,7 +16,7 @@ function tryToLogin(scope) {
     VK.Auth.login(function(response) {
         if (response.session) {
             hide_error();
-            $('#polls-body').removeClass("hidden");
+            $('#inner-body').removeClass("hidden");
             session = response.session;
         } else {
             show_error('Не удалось подключить профиль');

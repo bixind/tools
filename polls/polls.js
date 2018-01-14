@@ -1,6 +1,4 @@
 $(function() {
-    var session;
-
     $('#login').click(loginFunc(8192));
 
     function addPoll(place, owner_id, poll_id) {
